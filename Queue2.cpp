@@ -73,11 +73,12 @@ double Queue2::getHarmonicMean() {
 	for (int i = 1; i <= num; i++)
 	{
 		tmp = queueCopy.pop();
-		if (tmp == 0) {
-			cout << "На 0 делить нельзя!\n";
-			return 0;
-		}
+		
 		if (i % 2 == 0) {
+			if (tmp == 0) {
+				cout << "На 0 делить нельзя!\n";
+				return 0;
+			}
 			numEven++;
 			sum = sum + (double)1 / tmp;
 		}
